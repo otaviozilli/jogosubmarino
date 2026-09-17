@@ -1,0 +1,403 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#73d8f5, #0879b8);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jogo {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.cabecalho {
+    background: white;
+    padding: 18px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.cabecalho h1 {
+    color: #0879b8;
+    font-size: 32px;
+}
+
+.cabecalho p {
+    margin-top: 6px;
+    color: #555;
+}
+
+.informacoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    background: white;
+    padding: 12px 15px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* OCEANO */
+
+.oceano {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+
+    border-radius: 25px;
+    border: 5px solid white;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,0.25) 0 8px,
+            transparent 9px
+        ),
+        linear-gradient(#35d5f2, #0879b8 65%, #07527d);
+    
+    transition: background 1s;
+}
+
+/* AREIA */
+
+.oceano::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 55px;
+
+    background: #d8b66a;
+
+    border-radius: 50% 50% 0 0;
+
+    z-index: 1;
+}
+
+/* PROFUNDIDADES */
+
+.oceano.profundidade1 {
+    background: linear-gradient(
+        #42d9f5,
+        #159bc9,
+        #0879b8
+    );
+}
+
+.oceano.profundidade2 {
+    background: linear-gradient(
+        #159bc9,
+        #086a9b,
+        #07527d
+    );
+}
+
+.oceano.profundidade3 {
+    background: linear-gradient(
+        #0879a8,
+        #06496b,
+        #032f48
+    );
+}
+
+.oceano.profundidade4 {
+    background: linear-gradient(
+        #075477,
+        #03334e,
+        #011f30
+    );
+}
+
+.oceano.profundidade5 {
+    background: linear-gradient(
+        #043c59,
+        #021e2f,
+        #010f18
+    );
+}
+
+/* SUBMARINO */
+
+.submarino {
+    position: absolute;
+
+    left: 40px;
+    top: 180px;
+
+    font-size: 55px;
+
+    z-index: 10;
+
+    transition: transform 0.1s;
+}
+
+/* RECOMPENSAS */
+
+.recompensa {
+    position: absolute;
+
+    font-size: 40px;
+
+    z-index: 6;
+
+    cursor: pointer;
+
+    animation: flutuar 1.5s infinite alternate;
+}
+
+.recompensa1 {
+    left: 180px;
+    top: 70px;
+}
+
+.recompensa2 {
+    left: 350px;
+    top: 150px;
+}
+
+.recompensa3 {
+    left: 540px;
+    top: 250px;
+}
+
+.recompensa4 {
+    left: 300px;
+    top: 310px;
+}
+
+.recompensa5 {
+    right: 35px;
+    bottom: 65px;
+}
+
+@keyframes flutuar {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+
+}
+
+/* OBSTÁCULOS */
+
+.obstaculo {
+    position: absolute;
+
+    font-size: 55px;
+
+    z-index: 5;
+}
+
+.obstaculo1 {
+    left: 270px;
+    top: 80px;
+}
+
+.obstaculo2 {
+    left: 480px;
+    top: 100px;
+}
+
+.obstaculo3 {
+    left: 200px;
+    top: 270px;
+}
+
+.obstaculo4 {
+    right: 100px;
+    top: 300px;
+}
+
+/* PEIXES */
+
+.peixe {
+    position: absolute;
+
+    font-size: 35px;
+
+    z-index: 3;
+
+    animation: nadar 3s infinite alternate;
+}
+
+.peixe1 {
+    left: 100px;
+    top: 40px;
+}
+
+.peixe2 {
+    left: 580px;
+    top: 70px;
+}
+
+.peixe3 {
+    left: 400px;
+    top: 230px;
+}
+
+@keyframes nadar {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(30px);
+    }
+
+}
+
+/* BOLHAS */
+
+.bolha {
+    position: absolute;
+
+    font-size: 30px;
+
+    opacity: 0.8;
+
+    z-index: 2;
+}
+
+.bolha1 {
+    left: 80px;
+    top: 120px;
+}
+
+.bolha2 {
+    left: 430px;
+    top: 60px;
+}
+
+.bolha3 {
+    right: 100px;
+    top: 180px;
+}
+
+/* CONTROLES */
+
+.controles {
+    margin-top: 15px;
+}
+
+.controles button {
+    width: 55px;
+    height: 55px;
+
+    margin: 3px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 0 #07527d;
+
+    touch-action: none;
+}
+
+.controles button:active {
+    transform: translateY(3px);
+
+    box-shadow: 0 1px 0 #07527d;
+}
+
+/* MENSAGEM */
+
+.mensagem {
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 15px;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+
+    color: #07527d;
+}
+
+/* REINICIAR */
+
+.reiniciar {
+    margin-top: 12px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #ffcf33;
+
+    color: #333;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.reiniciar:hover {
+    background: #ffd94f;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .cabecalho h1 {
+        font-size: 25px;
+    }
+
+    .oceano {
+        height: 350px;
+    }
+
+    .submarino {
+        font-size: 45px;
+    }
+
+    .recompensa {
+        font-size: 32px;
+    }
+
+    .obstaculo {
+        font-size: 40px;
+    }
+
+    .peixe {
+        font-size: 28px;
+    }
+
+    .informacoes {
+        font-size: 13px;
+    }
+
+}

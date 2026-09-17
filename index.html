@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão Submarino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="jogo">
+
+        <header class="cabecalho">
+            <h1>🌊 Missão Submarino</h1>
+            <p>Desça até o fundo do mar e encontre as recompensas!</p>
+        </header>
+
+        <section class="informacoes">
+            <div>⭐ Pontos: <span id="pontos">0</span></div>
+            <div>❤️ Vidas: <span id="vidas">3</span></div>
+            <div>📍 Profundidade: <span id="profundidade">1</span></div>
+        </section>
+
+        <section class="oceano" id="oceano">
+
+            <div class="submarino" id="submarino">🚢</div>
+
+            <!-- RECOMPENSAS -->
+            <div class="recompensa recompensa1" data-pontos="10">⭐</div>
+            <div class="recompensa recompensa2" data-pontos="25">💎</div>
+            <div class="recompensa recompensa3" data-pontos="50">🪙</div>
+            <div class="recompensa recompensa4" data-pontos="100">💰</div>
+            <div class="recompensa recompensa5" data-pontos="200">👑</div>
+
+            <!-- OBSTÁCULOS -->
+            <div class="obstaculo obstaculo1">🪨</div>
+            <div class="obstaculo obstaculo2">🪨</div>
+            <div class="obstaculo obstaculo3">🪸</div>
+            <div class="obstaculo obstaculo4">🪨</div>
+
+            <!-- ANIMAIS -->
+            <div class="peixe peixe1">🐠</div>
+            <div class="peixe peixe2">🐟</div>
+            <div class="peixe peixe3">🐙</div>
+
+            <!-- BOLHAS -->
+            <div class="bolha bolha1">🫧</div>
+            <div class="bolha bolha2">🫧</div>
+            <div class="bolha bolha3">🫧</div>
+
+        </section>
+
+        <section class="controles">
+
+            <button id="cima">⬆️</button>
+
+            <div>
+                <button id="esquerda">⬅️</button>
+                <button id="baixo">⬇️</button>
+                <button id="direita">➡️</button>
+            </div>
+
+        </section>
+
+        <section class="mensagem" id="mensagem">
+            🚢 Desça e encontre sua primeira recompensa!
+        </section>
+
+        <button class="reiniciar" id="reiniciar">
+            🔄 Reiniciar jogo
+        </button>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
