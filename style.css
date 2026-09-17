@@ -3018,3 +3018,64 @@ button {
     }
 
 }
+.mensagem-barco {
+    display: block;
+    margin-top: 18px;
+    font-size: 22px;
+    color: #ffd166;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+/* ==========================================
+   AJUSTES PARA CELULAR E TABLET
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .area-exploracao {
+        width: 100%;
+        overflow: hidden;
+    }
+
+
+    .mundo {
+        width: 100%;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+
+    .submarino {
+        position: absolute;
+        z-index: 100;
+        transform-origin: center center;
+    }
+
+
+    .corpo-submarino {
+        font-size: 42px;
+    }
+
+
+    .painel-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .painel-controles {
+        padding: 15px;
+    }
+
+
+    .controle {
+        width: 58px;
+        height: 58px;
+        font-size: 24px;
+    }
+
+
+    .mini-mapa {
+        transform: scale(0.8);
+        transform-origin: top right;
+    }
+
+}
