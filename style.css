@@ -1,403 +1,3020 @@
+/* =========================================================
+   🌊 MISSÃO SUBMARINO
+   CSS 4.0
+   ========================================================= */
+
+
+/* =========================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================= */
+
 * {
-    margin: 0;
-    padding: 0;
+
     box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
 }
+
+
+html {
+
+    min-height: 100%;
+
+}
+
 
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(#73d8f5, #0879b8);
+
     min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #06182c,
+            #092d4d
+        );
+
+    color: white;
+
+    overflow-x: hidden;
+
+}
+
+
+button {
+
+    font-family: inherit;
+
+    border: none;
+
+    cursor: pointer;
+
+}
+
+
+.escondido {
+
+    display: none !important;
+
+}
+
+
+/* =========================================================
+   TELA INICIAL
+   ========================================================= */
+
+.tela {
+
+    min-height: 100vh;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
+    padding: 30px;
+
 }
 
-.jogo {
-    width: 90%;
-    max-width: 800px;
-    text-align: center;
-}
 
-.cabecalho {
-    background: white;
-    padding: 18px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-}
-
-.cabecalho h1 {
-    color: #0879b8;
-    font-size: 32px;
-}
-
-.cabecalho p {
-    margin-top: 6px;
-    color: #555;
-}
-
-.informacoes {
-    display: flex;
-    justify-content: space-between;
-    gap: 8px;
-    background: white;
-    padding: 12px 15px;
-    border-radius: 15px;
-    margin-bottom: 12px;
-    font-size: 17px;
-    font-weight: bold;
-}
-
-/* OCEANO */
-
-.oceano {
-    position: relative;
-    width: 100%;
-    height: 420px;
-    overflow: hidden;
-
-    border-radius: 25px;
-    border: 5px solid white;
+.inicial {
 
     background:
         radial-gradient(
-            circle at 20% 20%,
-            rgba(255,255,255,0.25) 0 8px,
-            transparent 9px
-        ),
-        linear-gradient(#35d5f2, #0879b8 65%, #07527d);
-    
-    transition: background 1s;
+            circle at center,
+            #12689a 0%,
+            #083c61 45%,
+            #031a30 100%
+        );
+
 }
 
-/* AREIA */
 
-.oceano::after {
+.painel-inicial {
+
+    width: min(
+        560px,
+        100%
+    );
+
+    padding: 40px;
+
+    border-radius: 28px;
+
+    text-align: center;
+
+    background:
+        rgba(
+            3,
+            28,
+            52,
+            0.92
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    box-shadow:
+        0 25px 70px
+        rgba(
+            0,
+            0,
+            0,
+            0.45
+        );
+
+}
+
+
+.icone-titulo {
+
+    font-size: 58px;
+
+    margin-bottom: 8px;
+
+    animation:
+        flutuar 3s
+        ease-in-out
+        infinite;
+
+}
+
+
+.painel-inicial h1 {
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.subtitulo {
+
+    color: #b9dff4;
+
+    line-height: 1.6;
+
+    font-size: 16px;
+
+}
+
+
+.preview-submarino {
+
+    font-size: 76px;
+
+    margin: 24px 0;
+
+    animation:
+        submarinoFlutua 2.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.objetivos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap: 12px;
+
+    margin: 20px 0 26px;
+
+}
+
+
+.objetivo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 14px 8px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.07
+        );
+
+}
+
+
+.objetivo span {
+
+    font-size: 28px;
+
+}
+
+
+.objetivo small {
+
+    color: #c5e6f7;
+
+    font-size: 12px;
+
+    line-height: 1.3;
+
+}
+
+
+.btn-principal {
+
+    width: 100%;
+
+    min-height: 52px;
+
+    padding: 14px 22px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #19a9ef,
+            #1267d6
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            0,
+            120,
+            220,
+            0.25
+        );
+
+    transition:
+        transform 0.2s,
+        filter 0.2s;
+
+}
+
+
+.btn-principal:hover {
+
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.1);
+
+}
+
+
+.btn-principal:active {
+
+    transform:
+        translateY(1px);
+
+}
+
+
+.recorde-inicial {
+
+    margin-top: 20px;
+
+    color: #9cc9e2;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   JOGO
+   ========================================================= */
+
+.jogo {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding-bottom: 30px;
+
+    background:
+        #061a2d;
+
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.cabecalho {
+
+    width: 100%;
+
+    min-height: 68px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding:
+        12px
+        22px;
+
+    background:
+        rgba(
+            3,
+            24,
+            43,
+            0.97
+        );
+
+    border-bottom:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+}
+
+
+.titulo-jogo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 20px;
+
+}
+
+
+.titulo-jogo span {
+
+    font-size: 28px;
+
+}
+
+
+.botoes-topo {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+
+.btn-topo {
+
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    color: white;
+
+    font-size: 19px;
+
+    transition:
+        background 0.2s,
+        transform 0.2s;
+
+}
+
+
+.btn-topo:hover {
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.16
+        );
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   PAINEL DE INFORMAÇÕES
+   ========================================================= */
+
+.painel-info {
+
+    width: min(
+        1100px,
+        calc(
+            100% - 30px
+        )
+    );
+
+    margin:
+        14px
+        auto
+        10px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 10px;
+
+}
+
+
+.info {
+
+    min-height: 66px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding:
+        10px
+        14px;
+
+    border-radius: 15px;
+
+    background:
+        #0b2943;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+}
+
+
+.info > span {
+
+    font-size: 24px;
+
+}
+
+
+.info div {
+
+    min-width: 0;
+
+}
+
+
+.info small {
+
+    display: block;
+
+    color: #82acc7;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    margin-bottom: 3px;
+
+}
+
+
+.info strong {
+
+    display: block;
+
+    font-size: 17px;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   PROGRESSO
+   ========================================================= */
+
+.progresso-container {
+
+    width: min(
+        1100px,
+        calc(
+            100% - 30px
+        )
+    );
+
+    margin:
+        0
+        auto
+        12px;
+
+}
+
+
+.progresso-topo {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 6px;
+
+    color: #a9d3e8;
+
+    font-size: 12px;
+
+}
+
+
+.progresso-topo strong {
+
+    color: white;
+
+}
+
+
+.barra-progresso {
+
+    width: 100%;
+
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        #071725;
+
+}
+
+
+.progresso {
+
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: inherit;
+
+    background:
+        linear-gradient(
+            90deg,
+            #26b7ff,
+            #62e5ff
+        );
+
+    transition:
+        width 0.15s
+        linear;
+
+}
+
+
+/* =========================================================
+   ÁREA DE EXPLORAÇÃO
+   ========================================================= */
+
+.area-exploracao {
+
+    position: relative;
+
+    width: min(
+        1100px,
+        calc(
+            100% - 30px
+        )
+    );
+
+    height: 560px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background:
+        #4fc3f7;
+
+    border:
+        3px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    box-shadow:
+        0 20px 45px
+        rgba(
+            0,
+            0,
+            0,
+            0.35
+        );
+
+}
+
+
+/* =========================================================
+   MUNDO
+   ========================================================= */
+
+.mundo {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    width: 1200px;
+
+    height: 2750px;
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        transform 0.05s
+        linear;
+
+}
+
+
+/* =========================================================
+   ZONAS
+   ========================================================= */
+
+.zona-cenario {
+
+    position: absolute;
+
+    left: 0;
+
+    width: 1200px;
+
+    height: 550px;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   CORES DAS ZONAS
+   ========================================================= */
+
+.zona1 {
+
+    top: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #62d8ff,
+            #259dcc
+        );
+
+}
+
+
+.zona2 {
+
+    top: 550px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #258fc5,
+            #106ba1
+        );
+
+}
+
+
+.zona3 {
+
+    top: 1100px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #105b91,
+            #073e70
+        );
+
+}
+
+
+.zona4 {
+
+    top: 1650px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #07375f,
+            #17284d
+        );
+
+}
+
+
+.zona5 {
+
+    top: 2200px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #17284d,
+            #050b20
+        );
+
+}
+
+
+/* =========================================================
+   LINHAS DE DIVISÃO DAS ZONAS
+   ========================================================= */
+
+.zona-cenario::after {
+
     content: "";
 
     position: absolute;
 
-    bottom: 0;
     left: 0;
 
+    bottom: 0;
+
     width: 100%;
-    height: 55px;
 
-    background: #d8b66a;
+    height: 4px;
 
-    border-radius: 50% 50% 0 0;
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
 
-    z-index: 1;
 }
 
-/* PROFUNDIDADES */
 
-.oceano.profundidade1 {
-    background: linear-gradient(
-        #42d9f5,
-        #159bc9,
-        #0879b8
-    );
-}
+/* =========================================================
+   NOME DAS ZONAS
+   ========================================================= */
 
-.oceano.profundidade2 {
-    background: linear-gradient(
-        #159bc9,
-        #086a9b,
-        #07527d
-    );
-}
+.nome-zona {
 
-.oceano.profundidade3 {
-    background: linear-gradient(
-        #0879a8,
-        #06496b,
-        #032f48
-    );
-}
-
-.oceano.profundidade4 {
-    background: linear-gradient(
-        #075477,
-        #03334e,
-        #011f30
-    );
-}
-
-.oceano.profundidade5 {
-    background: linear-gradient(
-        #043c59,
-        #021e2f,
-        #010f18
-    );
-}
-
-/* SUBMARINO */
-
-.submarino {
     position: absolute;
 
-    left: 40px;
+    top: 22px;
+
+    left: 50%;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        8px
+        16px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(
+            0,
+            25,
+            45,
+            0.45
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.14
+        );
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   DECORAÇÕES
+   ========================================================= */
+
+.peixe,
+.medusa,
+.lula,
+.polvo,
+.coral {
+
+    position: absolute;
+
+    z-index: 5;
+
+    user-select: none;
+
+    pointer-events: none;
+
+}
+
+
+.peixe {
+
+    font-size: 32px;
+
+}
+
+
+.medusa {
+
+    font-size: 38px;
+
+}
+
+
+.lula {
+
+    font-size: 48px;
+
+}
+
+
+.polvo {
+
+    font-size: 48px;
+
+}
+
+
+.coral {
+
+    font-size: 58px;
+
+}
+
+
+/* =========================================================
+   POSIÇÕES DOS DECORATIVOS
+   ========================================================= */
+
+.peixe1 {
+
+    left: 130px;
+
+    top: 150px;
+
+}
+
+
+.peixe2 {
+
+    left: 820px;
+
+    top: 300px;
+
+}
+
+
+.peixe3 {
+
+    left: 260px;
+
+    top: 680px;
+
+}
+
+
+.peixe4 {
+
+    left: 900px;
+
+    top: 830px;
+
+}
+
+
+.peixe5 {
+
+    left: 180px;
+
+    top: 1250px;
+
+}
+
+
+.medusa1 {
+
+    left: 760px;
+
+    top: 700px;
+
+}
+
+
+.medusa2 {
+
+    left: 850px;
+
+    top: 1330px;
+
+}
+
+
+.medusa3 {
+
+    left: 280px;
+
+    top: 1900px;
+
+}
+
+
+.medusa4 {
+
+    left: 950px;
+
+    top: 2390px;
+
+}
+
+
+.lula1 {
+
+    left: 420px;
+
+    top: 1300px;
+
+}
+
+
+.lula2 {
+
+    left: 800px;
+
+    top: 1780px;
+
+}
+
+
+.lula3 {
+
+    left: 250px;
+
+    top: 2350px;
+
+}
+
+
+.polvo1 {
+
+    left: 1000px;
+
+    top: 1450px;
+
+}
+
+
+.polvo2 {
+
+    left: 180px;
+
+    top: 1980px;
+
+}
+
+
+.polvo3 {
+
+    left: 850px;
+
+    top: 2520px;
+
+}
+
+
+.coral1 {
+
+    left: 70px;
+
+    top: 420px;
+
+}
+
+
+.coral2 {
+
+    left: 1010px;
+
+    top: 930px;
+
+}
+
+
+.bolhas1 {
+
+    position: absolute;
+
+    left: 520px;
+
     top: 180px;
 
-    font-size: 55px;
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.65
+        );
 
-    z-index: 10;
+    font-size: 20px;
 
-    transition: transform 0.1s;
 }
 
-/* RECOMPENSAS */
+
+/* =========================================================
+   PEDRAS
+   ========================================================= */
+
+.obstaculo {
+
+    position: absolute;
+
+    z-index: 20;
+
+}
+
+
+.pedra {
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 52px;
+
+    user-select: none;
+
+    pointer-events: auto;
+
+    filter:
+        drop-shadow(
+            0 7px 5px
+            rgba(
+                0,
+                0,
+                0,
+                0.25
+            )
+        );
+
+}
+
+
+/* =========================================================
+   POSIÇÕES DAS PEDRAS
+   ========================================================= */
+
+.pedra1 {
+
+    left: 320px;
+
+    top: 300px;
+
+}
+
+
+.pedra2 {
+
+    left: 690px;
+
+    top: 450px;
+
+}
+
+
+.pedra3 {
+
+    left: 150px;
+
+    top: 650px;
+
+}
+
+
+.pedra4 {
+
+    left: 560px;
+
+    top: 790px;
+
+}
+
+
+.pedra5 {
+
+    left: 930px;
+
+    top: 930px;
+
+}
+
+
+.pedra6 {
+
+    left: 320px;
+
+    top: 1120px;
+
+}
+
+
+.pedra7 {
+
+    left: 720px;
+
+    top: 1260px;
+
+}
+
+
+.pedra8 {
+
+    left: 100px;
+
+    top: 1450px;
+
+}
+
+
+.pedra9 {
+
+    left: 500px;
+
+    top: 1510px;
+
+}
+
+
+.pedra10 {
+
+    left: 980px;
+
+    top: 1630px;
+
+}
+
+
+.pedra11 {
+
+    left: 250px;
+
+    top: 1830px;
+
+}
+
+
+.pedra12 {
+
+    left: 680px;
+
+    top: 2010px;
+
+}
+
+
+.pedra13 {
+
+    left: 1050px;
+
+    top: 2140px;
+
+}
+
+
+.pedra14 {
+
+    left: 420px;
+
+    top: 2300px;
+
+}
+
+
+.pedra15 {
+
+    left: 760px;
+
+    top: 2600px;
+
+}
+
+
+.pedra-movel1 {
+
+    left: 150px;
+
+    top: 1580px;
+
+}
+
+
+.pedra-movel2 {
+
+    left: 850px;
+
+    top: 2200px;
+
+}
+
+
+/* =========================================================
+   RECOMPENSAS
+   ========================================================= */
 
 .recompensa {
+
     position: absolute;
+
+    z-index: 25;
+
+    width: 54px;
+
+    height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+
+    user-select: none;
+
+    cursor: default;
+
+    animation:
+        recompensaFlutua
+        2s
+        ease-in-out
+        infinite;
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(
+                0,
+                0,
+                0,
+                0.25
+            )
+        );
+
+}
+
+
+.recompensa1 {
+
+    left: 850px;
+
+    top: 250px;
+
+}
+
+
+.recompensa2 {
+
+    left: 180px;
+
+    top: 900px;
+
+}
+
+
+.recompensa3 {
+
+    left: 800px;
+
+    top: 1400px;
+
+}
+
+
+.recompensa4 {
+
+    left: 220px;
+
+    top: 1950px;
+
+}
+
+
+.recompensa5 {
+
+    left: 560px;
+
+    top: 2500px;
+
+    font-size: 52px;
+
+}
+
+
+/* =========================================================
+   INIMIGOS
+   ========================================================= */
+
+.inimigo {
+
+    position: absolute;
+
+    z-index: 35;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    user-select: none;
+
+    pointer-events: auto;
+
+    filter:
+        drop-shadow(
+            0 6px 8px
+            rgba(
+                0,
+                0,
+                0,
+                0.25
+            )
+        );
+
+}
+
+
+.peixe-inimigo {
+
+    width: 58px;
+
+    height: 58px;
 
     font-size: 40px;
 
-    z-index: 6;
-
-    cursor: pointer;
-
-    animation: flutuar 1.5s infinite alternate;
 }
 
-.recompensa1 {
-    left: 180px;
-    top: 70px;
+
+.animal-inimigo {
+
+    width: 90px;
+
+    height: 80px;
+
+    font-size: 58px;
+
 }
 
-.recompensa2 {
+
+.inimigo1 {
+
+    left: 580px;
+
+    top: 1230px;
+
+}
+
+
+.inimigo2 {
+
+    left: 900px;
+
+    top: 1500px;
+
+}
+
+
+.inimigo3 {
+
+    left: 500px;
+
+    top: 1740px;
+
+}
+
+
+.tubarao1 {
+
+    left: 800px;
+
+    top: 1850px;
+
+}
+
+
+.lula-inimigo1 {
+
     left: 350px;
-    top: 150px;
-}
 
-.recompensa3 {
-    left: 540px;
-    top: 250px;
-}
-
-.recompensa4 {
-    left: 300px;
-    top: 310px;
-}
-
-.recompensa5 {
-    right: 35px;
-    bottom: 65px;
-}
-
-@keyframes flutuar {
-
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-8px);
-    }
+    top: 2050px;
 
 }
 
-/* OBSTÁCULOS */
 
-.obstaculo {
+.tubarao-final {
+
+    left: 180px;
+
+    top: 2300px;
+
+}
+
+
+.lula-final {
+
+    left: 800px;
+
+    top: 2450px;
+
+}
+
+
+.peixe-final {
+
+    left: 950px;
+
+    top: 2650px;
+
+}
+
+
+/* =========================================================
+   SUBMARINO
+   ========================================================= */
+
+.submarino {
+
     position: absolute;
+
+    z-index: 100;
+
+    width: 90px;
+
+    height: 62px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    user-select: none;
+
+    pointer-events: none;
+
+    will-change:
+        left,
+        top,
+        transform;
+
+}
+
+
+.corpo-submarino {
+
+    display: block;
 
     font-size: 55px;
 
-    z-index: 5;
+    line-height: 1;
+
+    filter:
+        drop-shadow(
+            0 7px 5px
+            rgba(
+                0,
+                0,
+                0,
+                0.35
+            )
+        );
+
 }
 
-.obstaculo1 {
-    left: 270px;
-    top: 80px;
-}
 
-.obstaculo2 {
-    left: 480px;
-    top: 100px;
-}
+.luz-submarino {
 
-.obstaculo3 {
-    left: 200px;
-    top: 270px;
-}
-
-.obstaculo4 {
-    right: 100px;
-    top: 300px;
-}
-
-/* PEIXES */
-
-.peixe {
     position: absolute;
 
-    font-size: 35px;
+    left: 13px;
+
+    top: 16px;
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background:
+        #fff7a3;
+
+    box-shadow:
+        0 0 12px
+        #fff7a3;
 
     z-index: 3;
 
-    animation: nadar 3s infinite alternate;
 }
 
-.peixe1 {
-    left: 100px;
-    top: 40px;
-}
 
-.peixe2 {
-    left: 580px;
-    top: 70px;
-}
+.bolhas-motor {
 
-.peixe3 {
-    left: 400px;
-    top: 230px;
-}
-
-@keyframes nadar {
-
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(30px);
-    }
-
-}
-
-/* BOLHAS */
-
-.bolha {
     position: absolute;
 
-    font-size: 30px;
+    left: -12px;
 
-    opacity: 0.8;
+    top: 24px;
 
-    z-index: 2;
+    display: flex;
+
+    gap: 3px;
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.75
+        );
+
+    font-size: 14px;
+
 }
 
-.bolha1 {
-    left: 80px;
-    top: 120px;
+
+.bolhas-motor span {
+
+    animation:
+        bolhaMotor
+        1s
+        ease-out
+        infinite;
+
 }
 
-.bolha2 {
-    left: 430px;
-    top: 60px;
+
+.bolhas-motor span:nth-child(2) {
+
+    animation-delay:
+        0.2s;
+
 }
 
-.bolha3 {
-    right: 100px;
-    top: 180px;
+
+.bolhas-motor span:nth-child(3) {
+
+    animation-delay:
+        0.4s;
+
 }
 
-/* CONTROLES */
 
-.controles {
-    margin-top: 15px;
+/*
+   Mantemos a direção visual correta.
+*/
+
+.virado-esquerda
+.corpo-submarino {
+
+    transform:
+        scaleX(-1);
+
 }
 
-.controles button {
-    width: 55px;
-    height: 55px;
 
-    margin: 3px;
+.virado-direita
+.corpo-submarino {
 
-    border: none;
-    border-radius: 15px;
+    transform:
+        scaleX(1);
 
-    background: white;
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-    box-shadow: 0 4px 0 #07527d;
-
-    touch-action: none;
 }
 
-.controles button:active {
-    transform: translateY(3px);
 
-    box-shadow: 0 1px 0 #07527d;
+/* =========================================================
+   PARTÍCULAS
+   ========================================================= */
+
+.particulas {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 15;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
 }
 
-/* MENSAGEM */
 
-.mensagem {
-    background: white;
+.particulas span {
 
-    padding: 12px;
+    position: absolute;
 
-    border-radius: 15px;
-
-    margin-top: 15px;
-
-    font-weight: bold;
-
-    color: #07527d;
-}
-
-/* REINICIAR */
-
-.reiniciar {
-    margin-top: 12px;
-
-    padding: 12px 20px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: #ffcf33;
-
-    color: #333;
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.7
+        );
 
     font-size: 16px;
 
-    font-weight: bold;
+    animation:
+        particulaSobe
+        1.8s
+        linear
+        forwards;
 
-    cursor: pointer;
 }
 
-.reiniciar:hover {
-    background: #ffd94f;
+
+/* =========================================================
+   TEXTO FLUTUANTE
+   ========================================================= */
+
+.texto-flutuante {
+
+    position: absolute;
+
+    z-index: 150;
+
+    left: 50%;
+
+    top: 42%;
+
+    transform:
+        translate(
+            -50%,
+            10px
+        );
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 900;
+
+    text-shadow:
+        0 3px 8px
+        rgba(
+            0,
+            0,
+            0,
+            0.6
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
 }
 
-/* CELULAR */
 
-@media (max-width: 600px) {
+.texto-flutuante.ativo {
 
-    .cabecalho h1 {
-        font-size: 25px;
+    animation:
+        textoSobe
+        0.9s
+        ease-out
+        forwards;
+
+}
+
+
+/* =========================================================
+   AVISOS
+   ========================================================= */
+
+.aviso-perigo {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 38%;
+
+    z-index: 140;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    padding:
+        12px
+        24px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(
+            180,
+            30,
+            30,
+            0.9
+        );
+
+    font-weight: 900;
+
+    font-size: 18px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.aviso-perigo.ativo {
+
+    animation:
+        perigoAviso
+        0.7s
+        ease-out;
+
+}
+
+
+.aviso-profundidade {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 90px;
+
+    z-index: 140;
+
+    transform:
+        translateX(-50%);
+
+    padding:
+        10px
+        20px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(
+            4,
+            26,
+            47,
+            0.9
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    font-weight: 800;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+}
+
+
+.aviso-profundidade.ativo {
+
+    animation:
+        zonaAviso
+        1.8s
+        ease-out;
+
+}
+
+
+/* =========================================================
+   MINI MAPA
+   ========================================================= */
+
+.mini-mapa {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    z-index: 300;
+
+    width: 150px;
+
+    padding: 12px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(
+            3,
+            22,
+            39,
+            0.92
+        );
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.15
+        );
+
+    box-shadow:
+        0 10px 25px
+        rgba(
+            0,
+            0,
+            0,
+            0.3
+        );
+
+}
+
+
+.mapa-titulo {
+
+    text-align: center;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    margin-bottom: 9px;
+
+}
+
+
+.mapa-zonas {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+
+.mini-zona {
+
+    height: 17px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 4px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.6
+        );
+
+    font-size: 9px;
+
+}
+
+
+.marcador-mapa {
+
+    position: absolute;
+
+    left: 8px;
+
+    top: 38px;
+
+    width: 134px;
+
+    height: 4px;
+
+    border-radius: 10px;
+
+    background:
+        #55dcff;
+
+    box-shadow:
+        0 0 10px
+        #55dcff;
+
+    transition:
+        top 0.15s
+        linear;
+
+}
+
+
+/* =========================================================
+   PAINEL DA MISSÃO
+   ========================================================= */
+
+.painel-missao {
+
+    width: min(
+        1100px,
+        calc(
+            100% - 30px
+        )
+    );
+
+    min-height: 66px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin:
+        12px
+        auto;
+
+    padding:
+        10px
+        15px;
+
+    border-radius: 15px;
+
+    background:
+        #0b2943;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+}
+
+
+.missao-icone {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(
+            39,
+            176,
+            255,
+            0.15
+        );
+
+    font-size: 22px;
+
+}
+
+
+.missao-conteudo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.missao-conteudo small {
+
+    color: #76a9c5;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+}
+
+
+.missao-conteudo strong {
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   COMBO
+   ========================================================= */
+
+.combo {
+
+    width: fit-content;
+
+    margin:
+        10px
+        auto;
+
+    padding:
+        8px
+        18px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff7a18,
+            #ffb300
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 8px 20px
+        rgba(
+            255,
+            120,
+            0,
+            0.25
+        );
+
+}
+
+
+/* =========================================================
+   CONTROLES
+   ========================================================= */
+
+.painel-controles {
+
+    width: min(
+        1100px,
+        calc(
+            100% - 30px
+        )
+    );
+
+    min-height: 115px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin:
+        12px
+        auto;
+
+    padding:
+        15px 20px;
+
+    border-radius: 17px;
+
+    background:
+        #0b2943;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+}
+
+
+.controle-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.controle-info strong {
+
+    font-size: 13px;
+
+}
+
+
+.controle-info span {
+
+    color: #8fb9ce;
+
+    font-size: 12px;
+
+}
+
+
+.controle-dpad {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.linha-controles {
+
+    display: flex;
+
+    gap: 5px;
+
+}
+
+
+.controle {
+
+    width: 43px;
+
+    height: 38px;
+
+    border-radius: 10px;
+
+    background:
+        #153d5b;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 4px 0
+        #09263c;
+
+}
+
+
+.controle:hover {
+
+    background:
+        #1c5275;
+
+}
+
+
+.controle:active {
+
+    transform:
+        translateY(3px);
+
+    box-shadow:
+        0 1px 0
+        #09263c;
+
+}
+
+
+/* =========================================================
+   MENSAGEM
+   ========================================================= */
+
+.mensagem {
+
+    width: min(
+        1100px,
+        calc(
+            100% - 30px
+        )
+    );
+
+    min-height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin:
+        8px
+        auto;
+
+    padding:
+        8px
+        15px;
+
+    color:
+        #9ed6ed;
+
+    font-size: 13px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   CONQUISTAS
+   ========================================================= */
+
+.painel-conquistas {
+
+    width: min(
+        1100px,
+        calc(
+            100% - 30px
+        )
+    );
+
+    margin:
+        10px
+        auto;
+
+    padding:
+        15px;
+
+    border-radius: 17px;
+
+    background:
+        #0b2943;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.08
+        );
+
+}
+
+
+.painel-conquistas h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.lista-conquistas {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            5,
+            1fr
+        );
+
+    gap: 8px;
+
+}
+
+
+.conquista {
+
+    min-height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    padding: 7px;
+
+    border-radius: 10px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.05
+        );
+
+    color:
+        rgba(
+            255,
+            255,
+            255,
+            0.4
+        );
+
+    font-size: 11px;
+
+    text-align: center;
+
+    transition:
+        0.3s;
+
+}
+
+
+.conquista span {
+
+    line-height: 1.2;
+
+}
+
+
+.conquista.desbloqueada {
+
+    color: white;
+
+    background:
+        rgba(
+            40,
+            174,
+            255,
+            0.15
+        );
+
+    border:
+        1px solid
+        rgba(
+            40,
+            174,
+            255,
+            0.3
+        );
+
+}
+
+
+/* =========================================================
+   OVERLAYS
+   ========================================================= */
+
+.overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+    background:
+        rgba(
+            0,
+            12,
+            25,
+            0.82
+        );
+
+    backdrop-filter:
+        blur(7px);
+
+}
+
+
+.painel-overlay {
+
+    width: min(
+        470px,
+        100%
+    );
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        #0a2942;
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.12
+        );
+
+    box-shadow:
+        0 30px 80px
+        rgba(
+            0,
+            0,
+            0,
+            0.45
+        );
+
+}
+
+
+.icone-overlay {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.painel-overlay h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.painel-overlay p {
+
+    color: #a7cadc;
+
+    line-height: 1.5;
+
+    margin-bottom: 24px;
+
+}
+
+
+.resultado-final {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.resultado-final > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 4px;
+
+    padding: 13px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.06
+        );
+
+}
+
+
+.resultado-final span {
+
+    font-size: 22px;
+
+}
+
+
+.resultado-final strong {
+
+    font-size: 22px;
+
+}
+
+
+.resultado-final small {
+
+    color: #84adc2;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   ANIMAÇÕES
+   ========================================================= */
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
     }
 
-    .oceano {
-        height: 350px;
+    50% {
+
+        transform:
+            translateY(-7px);
+
     }
 
-    .submarino {
-        font-size: 45px;
+}
+
+
+@keyframes submarinoFlutua {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
     }
 
-    .recompensa {
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+@keyframes submarinoInvulneravel {
+
+    50% {
+
+        opacity: 0.35;
+
+    }
+
+}
+
+
+@keyframes recompensaFlutua {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px)
+            scale(1.05);
+
+    }
+
+}
+
+
+@keyframes bolhaMotor {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateX(0)
+            scale(0.5);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateX(-15px)
+            translateY(-5px)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes particulaSobe {
+
+    from {
+
+        opacity: 0.7;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            translateY(-90px)
+            scale(0.5);
+
+    }
+
+}
+
+
+@keyframes textoSobe {
+
+    from {
+
+        opacity: 1;
+
+        transform:
+            translate(
+                -50%,
+                10px
+            );
+
+    }
+
+    to {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                -50%,
+                -55px
+            );
+
+    }
+
+}
+
+
+@keyframes perigoAviso {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(0.8);
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    80% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(1.05);
+
+    }
+
+}
+
+
+@keyframes zonaAviso {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(-10px);
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    80% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (
+    max-width: 800px
+) {
+
+    .painel-info {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .lista-conquistas {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .mini-mapa {
+
+        display: none;
+
+    }
+
+
+    .painel-controles {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+}
+
+
+@media (
+    max-width: 600px
+) {
+
+    .painel-inicial {
+
+        padding: 28px 20px;
+
+    }
+
+
+    .painel-inicial h1 {
+
         font-size: 32px;
+
     }
 
-    .obstaculo {
-        font-size: 40px;
+
+    .objetivos {
+
+        grid-template-columns:
+            1fr;
+
     }
 
-    .peixe {
-        font-size: 28px;
+
+    .objetivo {
+
+        flex-direction: row;
+
+        justify-content: center;
+
     }
 
-    .informacoes {
-        font-size: 13px;
+
+    .cabecalho {
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    .titulo-jogo strong {
+
+        font-size: 15px;
+
+    }
+
+
+    .area-exploracao {
+
+        height: 500px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .painel-info {
+
+        width:
+            calc(
+                100% - 20px
+            );
+
+    }
+
+
+    .progresso-container,
+    .painel-missao,
+    .painel-controles,
+    .mensagem,
+    .painel-conquistas {
+
+        width:
+            calc(
+                100% - 20px
+            );
+
     }
 
 }
