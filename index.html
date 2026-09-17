@@ -1,79 +1,1229 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Missão Submarino</title>
-    <link rel="stylesheet" href="style.css">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>🌊 Missão Submarino</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <main class="jogo">
+
+    <!-- =====================================================
+         TELA INICIAL
+         ===================================================== -->
+
+    <section
+        id="telaInicial"
+        class="tela inicial"
+    >
+
+        <div class="painel-inicial">
+
+            <div class="icone-titulo">
+                🌊
+            </div>
+
+            <h1>
+                Missão Submarino
+            </h1>
+
+            <p class="subtitulo">
+                Explore o oceano, encontre tesouros
+                <br>
+                e chegue até a Fossa Oceânica!
+            </p>
+
+
+            <div class="preview-submarino">
+                🚢
+            </div>
+
+
+            <div class="objetivos">
+
+                <div class="objetivo">
+                    <span>💎</span>
+                    <small>
+                        Encontre tesouros
+                    </small>
+                </div>
+
+                <div class="objetivo">
+                    <span>🪨</span>
+                    <small>
+                        Desvie das pedras
+                    </small>
+                </div>
+
+                <div class="objetivo">
+                    <span>🐟</span>
+                    <small>
+                        Cuidado com os animais
+                    </small>
+                </div>
+
+            </div>
+
+
+            <button
+                id="btnIniciar"
+                class="btn-principal"
+            >
+                🚀 COMEÇAR MISSÃO
+            </button>
+
+
+            <p class="recorde-inicial">
+                🏆 Recorde:
+                <span id="recordeInicial">
+                    0
+                </span>
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JOGO
+         ===================================================== -->
+
+    <main
+        id="jogo"
+        class="jogo escondido"
+    >
+
+
+        <!-- CABEÇALHO -->
 
         <header class="cabecalho">
-            <h1>🌊 Missão Submarino</h1>
-            <p>Desça até o fundo do mar e encontre as recompensas!</p>
+
+            <div class="titulo-jogo">
+
+                <span>
+                    🌊
+                </span>
+
+                <strong>
+                    Missão Submarino
+                </strong>
+
+            </div>
+
+
+            <div class="botoes-topo">
+
+                <button
+                    id="btnSom"
+                    class="btn-topo"
+                >
+                    🔊
+                </button>
+
+
+                <button
+                    id="btnPausa"
+                    class="btn-topo"
+                >
+                    ⏸️
+                </button>
+
+            </div>
+
         </header>
 
-        <section class="informacoes">
-            <div>⭐ Pontos: <span id="pontos">0</span></div>
-            <div>❤️ Vidas: <span id="vidas">3</span></div>
-            <div>📍 Profundidade: <span id="profundidade">1</span></div>
+
+
+        <!-- =================================================
+             PAINEL DE INFORMAÇÕES
+             ================================================= -->
+
+        <section class="painel-info">
+
+
+            <div class="info">
+
+                <span>
+                    💎
+                </span>
+
+                <div>
+
+                    <small>
+                        PONTOS
+                    </small>
+
+                    <strong id="pontos">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="info">
+
+                <span>
+                    ❤️
+                </span>
+
+                <div>
+
+                    <small>
+                        VIDAS
+                    </small>
+
+                    <strong id="vidas">
+                        ❤️❤️❤️
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="info">
+
+                <span>
+                    🌊
+                </span>
+
+                <div>
+
+                    <small>
+                        ZONA
+                    </small>
+
+                    <strong id="zonaAtual">
+                        1 / 5
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="info">
+
+                <span>
+                    🏆
+                </span>
+
+                <div>
+
+                    <small>
+                        RECORDE
+                    </small>
+
+                    <strong id="recorde">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
         </section>
 
-        <section class="oceano" id="oceano">
 
-            <div class="submarino" id="submarino">🚢</div>
 
-            <!-- RECOMPENSAS -->
-            <div class="recompensa recompensa1" data-pontos="10">⭐</div>
-            <div class="recompensa recompensa2" data-pontos="25">💎</div>
-            <div class="recompensa recompensa3" data-pontos="50">🪙</div>
-            <div class="recompensa recompensa4" data-pontos="100">💰</div>
-            <div class="recompensa recompensa5" data-pontos="200">👑</div>
+        <!-- =================================================
+             PROFUNDIDADE
+             ================================================= -->
 
-            <!-- OBSTÁCULOS -->
-            <div class="obstaculo obstaculo1">🪨</div>
-            <div class="obstaculo obstaculo2">🪨</div>
-            <div class="obstaculo obstaculo3">🪸</div>
-            <div class="obstaculo obstaculo4">🪨</div>
+        <section class="progresso-container">
 
-            <!-- ANIMAIS -->
-            <div class="peixe peixe1">🐠</div>
-            <div class="peixe peixe2">🐟</div>
-            <div class="peixe peixe3">🐙</div>
+            <div class="progresso-topo">
 
-            <!-- BOLHAS -->
-            <div class="bolha bolha1">🫧</div>
-            <div class="bolha bolha2">🫧</div>
-            <div class="bolha bolha3">🫧</div>
+                <span>
+                    🌊 Profundidade
+                </span>
 
-        </section>
+                <strong id="profundidade">
+                    0%
+                </strong>
 
-        <section class="controles">
+            </div>
 
-            <button id="cima">⬆️</button>
 
-            <div>
-                <button id="esquerda">⬅️</button>
-                <button id="baixo">⬇️</button>
-                <button id="direita">➡️</button>
+            <div class="barra-progresso">
+
+                <div
+                    id="barraProgresso"
+                    class="progresso"
+                ></div>
+
             </div>
 
         </section>
 
-        <section class="mensagem" id="mensagem">
-            🚢 Desça e encontre sua primeira recompensa!
+
+
+        <!-- =================================================
+             ÁREA DO OCEANO
+             ================================================= -->
+
+        <section
+            id="areaExploracao"
+            class="area-exploracao"
+        >
+
+
+            <div
+                id="mundo"
+                class="mundo"
+            >
+
+
+                <!-- =========================================
+                     ZONA 1
+                     ========================================= -->
+
+                <div
+                    class="zona-cenario zona1"
+                    data-zona="1"
+                >
+
+                    <div class="nome-zona">
+                        ☀️ Superfície
+                    </div>
+
+
+                    <div class="peixe decoracao peixe1">
+                        🐟
+                    </div>
+
+                    <div class="peixe decoracao peixe2">
+                        🐠
+                    </div>
+
+                    <div class="bolhas bolhas1">
+                        ○ ○ ○
+                    </div>
+
+                    <div class="coral coral1">
+                        🪸
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     ZONA 2
+                     ========================================= -->
+
+                <div
+                    class="zona-cenario zona2"
+                    data-zona="2"
+                >
+
+                    <div class="nome-zona">
+                        🌊 Águas Rasas
+                    </div>
+
+
+                    <div class="peixe decoracao peixe3">
+                        🐟
+                    </div>
+
+                    <div class="peixe decoracao peixe4">
+                        🐡
+                    </div>
+
+                    <div class="medusa decoracao medusa1">
+                        🪼
+                    </div>
+
+                    <div class="coral coral2">
+                        🪸
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     ZONA 3
+                     ========================================= -->
+
+                <div
+                    class="zona-cenario zona3"
+                    data-zona="3"
+                >
+
+                    <div class="nome-zona">
+                        🌑 Oceano Profundo
+                    </div>
+
+
+                    <div class="peixe decoracao peixe5">
+                        🐟
+                    </div>
+
+                    <div class="lula decoracao lula1">
+                        🦑
+                    </div>
+
+                    <div class="polvo decoracao polvo1">
+                        🐙
+                    </div>
+
+                    <div class="medusa decoracao medusa2">
+                        🪼
+                    </div>
+
+
+                    <div
+                        class="inimigo peixe-inimigo inimigo1"
+                        data-tipo="peixe"
+                        data-dano="1"
+                    >
+                        🐟
+                    </div>
+
+
+                    <div
+                        class="inimigo peixe-inimigo inimigo2"
+                        data-tipo="peixe"
+                        data-dano="1"
+                    >
+                        🐠
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     ZONA 4
+                     ========================================= -->
+
+                <div
+                    class="zona-cenario zona4"
+                    data-zona="4"
+                >
+
+                    <div class="nome-zona">
+                        ⚠️ Abismo
+                    </div>
+
+
+                    <div class="lula decoracao lula2">
+                        🦑
+                    </div>
+
+                    <div class="polvo decoracao polvo2">
+                        🐙
+                    </div>
+
+                    <div class="medusa decoracao medusa3">
+                        🪼
+                    </div>
+
+
+                    <div
+                        class="inimigo animal-inimigo tubarao1"
+                        data-tipo="tubarao"
+                        data-dano="1"
+                    >
+                        🦈
+                    </div>
+
+
+                    <div
+                        class="inimigo animal-inimigo lula-inimigo1"
+                        data-tipo="animal"
+                        data-dano="1"
+                    >
+                        🦑
+                    </div>
+
+
+                    <div
+                        class="inimigo peixe-inimigo inimigo3"
+                        data-tipo="peixe"
+                        data-dano="1"
+                    >
+                        🐟
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     ZONA 5
+                     ========================================= -->
+
+                <div
+                    class="zona-cenario zona5"
+                    data-zona="5"
+                >
+
+                    <div class="nome-zona">
+                        ☠️ Fossa Oceânica
+                    </div>
+
+
+                    <div class="polvo decoracao polvo3">
+                        🐙
+                    </div>
+
+                    <div class="lula decoracao lula3">
+                        🦑
+                    </div>
+
+                    <div class="medusa decoracao medusa4">
+                        🪼
+                    </div>
+
+
+                    <div
+                        class="inimigo animal-inimigo tubarao-final"
+                        data-tipo="tubarao"
+                        data-dano="1"
+                    >
+                        🦈
+                    </div>
+
+
+                    <div
+                        class="inimigo animal-inimigo lula-final"
+                        data-tipo="animal"
+                        data-dano="1"
+                    >
+                        🦑
+                    </div>
+
+
+                    <div
+                        class="inimigo peixe-inimigo peixe-final"
+                        data-tipo="peixe"
+                        data-dano="1"
+                    >
+                        🐟
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     PEDRAS
+                     ================================================= -->
+
+                <div
+                    class="obstaculo pedra pedra1"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra2"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra3"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra4"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra5"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra6"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra7"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra8"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra9"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra10"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra11"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra12"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra13"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra14"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra15"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra-movel1"
+                    data-movel="true"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+                <div
+                    class="obstaculo pedra pedra-movel2"
+                    data-movel="true"
+                    data-dano="1"
+                >
+                    🪨
+                </div>
+
+
+
+                <!-- =================================================
+                     RECOMPENSAS
+                     ================================================= -->
+
+                <div
+                    class="recompensa recompensa1"
+                    data-pontos="10"
+                    data-tipo="moeda"
+                >
+                    🪙
+                </div>
+
+
+                <div
+                    class="recompensa recompensa2"
+                    data-pontos="25"
+                    data-tipo="gema"
+                >
+                    💎
+                </div>
+
+
+                <div
+                    class="recompensa recompensa3"
+                    data-pontos="50"
+                    data-tipo="bau"
+                >
+                    🎁
+                </div>
+
+
+                <div
+                    class="recompensa recompensa4"
+                    data-pontos="100"
+                    data-tipo="diamante"
+                >
+                    💠
+                </div>
+
+
+                <div
+                    class="recompensa recompensa5 tesouro-final"
+                    data-pontos="200"
+                    data-tipo="tesouro"
+                >
+                    👑
+                </div>
+
+
+
+                <!-- =================================================
+                     SUBMARINO
+                     ================================================= -->
+
+                <div
+                    id="submarino"
+                    class="submarino"
+                >
+
+                    <div class="luz-submarino"></div>
+
+                    <span class="corpo-submarino">
+                        🚢
+                    </span>
+
+                    <div class="bolhas-motor">
+
+                        <span>•</span>
+
+                        <span>•</span>
+
+                        <span>•</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PARTÍCULAS -->
+
+                <div
+                    id="particulas"
+                    class="particulas"
+                ></div>
+
+
+                <!-- TEXTO FLUTUANTE -->
+
+                <div
+                    id="textoFlutuante"
+                    class="texto-flutuante"
+                ></div>
+
+
+                <!-- AVISO DE PERIGO -->
+
+                <div
+                    id="avisoPerigo"
+                    class="aviso-perigo"
+                >
+                    ⚠️ PERIGO!
+                </div>
+
+
+                <!-- AVISO DE PROFUNDIDADE -->
+
+                <div
+                    id="avisoProfundidade"
+                    class="aviso-profundidade"
+                ></div>
+
+
+
+                <!-- =================================================
+                     MINI MAPA
+                     ================================================= -->
+
+                <div
+                    id="miniMapa"
+                    class="mini-mapa"
+                >
+
+                    <div class="mapa-titulo">
+                        🗺️ MAPA
+                    </div>
+
+
+                    <div class="mapa-zonas">
+
+                        <div class="mini-zona">
+                            1
+                        </div>
+
+                        <div class="mini-zona">
+                            2
+                        </div>
+
+                        <div class="mini-zona">
+                            3
+                        </div>
+
+                        <div class="mini-zona">
+                            4
+                        </div>
+
+                        <div class="mini-zona">
+                            5
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="marcadorMapa"
+                        class="marcador-mapa"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
         </section>
 
-        <button class="reiniciar" id="reiniciar">
-            🔄 Reiniciar jogo
-        </button>
+
+
+        <!-- =====================================================
+             MISSÃO
+             ===================================================== -->
+
+        <section
+            id="painelMissao"
+            class="painel-missao"
+        >
+
+            <div class="missao-icone">
+                🎯
+            </div>
+
+
+            <div class="missao-conteudo">
+
+                <small>
+                    MISSÃO ATUAL
+                </small>
+
+                <strong id="missaoTexto">
+                    Encontre o primeiro tesouro
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- COMBO -->
+
+        <div
+            id="combo"
+            class="combo escondido"
+        >
+            🔥 COMBO x<span id="numeroCombo">2</span>
+        </div>
+
+
+
+        <!-- =====================================================
+             CONTROLES
+             ===================================================== -->
+
+        <section class="painel-controles">
+
+            <div class="controle-info">
+
+                <strong>
+                    CONTROLES
+                </strong>
+
+                <span>
+                    Use as setas ou WASD para pilotar
+                </span>
+
+            </div>
+
+
+            <div class="controle-dpad">
+
+                <button
+                    class="controle"
+                    data-direcao="cima"
+                >
+                    ▲
+                </button>
+
+
+                <div class="linha-controles">
+
+                    <button
+                        class="controle"
+                        data-direcao="esquerda"
+                    >
+                        ◀
+                    </button>
+
+
+                    <button
+                        class="controle"
+                        data-direcao="baixo"
+                    >
+                        ▼
+                    </button>
+
+
+                    <button
+                        class="controle"
+                        data-direcao="direita"
+                    >
+                        ▶
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- MENSAGEM -->
+
+        <div
+            id="mensagem"
+            class="mensagem"
+        >
+            Explore o oceano!
+        </div>
+
+
+
+        <!-- =====================================================
+             CONQUISTAS
+             ===================================================== -->
+
+        <section
+            id="painelConquistas"
+            class="painel-conquistas"
+        >
+
+            <h3>
+                🏅 Conquistas
+            </h3>
+
+
+            <div class="lista-conquistas">
+
+                <div
+                    class="conquista"
+                    data-conquista="primeiroTesouro"
+                >
+                    💎
+                    <span>
+                        Primeiro Tesouro
+                    </span>
+                </div>
+
+
+                <div
+                    class="conquista"
+                    data-conquista="explorador"
+                >
+                    🧭
+                    <span>
+                        Explorador
+                    </span>
+                </div>
+
+
+                <div
+                    class="conquista"
+                    data-conquista="zona3"
+                >
+                    🌑
+                    <span>
+                        Oceano Profundo
+                    </span>
+                </div>
+
+
+                <div
+                    class="conquista"
+                    data-conquista="sobrevivente"
+                >
+                    ❤️
+                    <span>
+                        Sobrevivente
+                    </span>
+                </div>
+
+
+                <div
+                    class="conquista"
+                    data-conquista="mestre"
+                >
+                    👑
+                    <span>
+                        Mestre do Oceano
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
 
     </main>
+
+
+
+    <!-- =====================================================
+         PAUSA
+         ===================================================== -->
+
+    <section
+        id="telaPausa"
+        class="overlay escondido"
+    >
+
+        <div class="painel-overlay">
+
+            <div class="icone-overlay">
+                ⏸️
+            </div>
+
+            <h2>
+                Missão Pausada
+            </h2>
+
+            <p>
+                O oceano está esperando...
+            </p>
+
+
+            <button
+                id="btnContinuar"
+                class="btn-principal"
+            >
+                ▶️ CONTINUAR
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DERROTA
+         ===================================================== -->
+
+    <section
+        id="telaPerdeu"
+        class="overlay escondido"
+    >
+
+        <div class="painel-overlay perdeu">
+
+            <div class="icone-overlay">
+                💥
+            </div>
+
+            <h2>
+                Você perdeu!
+            </h2>
+
+            <p>
+                O submarino não conseguiu continuar.
+            </p>
+
+
+            <div class="resultado-final">
+
+                <div>
+
+                    <span>
+                        💎
+                    </span>
+
+                    <strong id="pontosFinais">
+                        0
+                    </strong>
+
+                    <small>
+                        Pontos
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        🌊
+                    </span>
+
+                    <strong id="profundidadeFinal">
+                        0%
+                    </strong>
+
+                    <small>
+                        Profundidade
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="btnTentarNovamente"
+                class="btn-principal"
+            >
+                🔄 TENTAR NOVAMENTE
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         VITÓRIA
+         ===================================================== -->
+
+    <section
+        id="telaVitoria"
+        class="overlay escondido"
+    >
+
+        <div class="painel-overlay vitoria">
+
+            <div class="icone-overlay">
+                👑
+            </div>
+
+            <h2>
+                Missão concluída!
+            </h2>
+
+            <p>
+                Você chegou ao fundo do oceano
+                e encontrou o tesouro final!
+            </p>
+
+
+            <div class="resultado-final">
+
+                <div>
+
+                    <span>
+                        💎
+                    </span>
+
+                    <strong id="pontosVitoria">
+                        0
+                    </strong>
+
+                    <small>
+                        Pontos
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        🔥
+                    </span>
+
+                    <strong id="comboFinal">
+                        0
+                    </strong>
+
+                    <small>
+                        Melhor Combo
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="btnJogarNovamente"
+                class="btn-principal"
+            >
+                🚀 JOGAR NOVAMENTE
+            </button>
+
+        </div>
+
+    </section>
+
+
 
     <script src="script.js"></script>
 
 </body>
+
 </html>
